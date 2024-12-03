@@ -4,9 +4,9 @@
 \name{gslSDM-package}
 \alias{gslSDM}
 \alias{gslSDM-package}
-\title{gslSDM: R functions to help use package [sdmTMB](https://pbs-assess.github.io/sdmTMB/) with Gulf of St. Lawrence fisheries data}
+\title{gslSDM: R functions to help use package sdmTMB with Gulf of St. Lawrence fisheries data}
 \description{
-R functions to help use package [sdmTMB](https://pbs-assess.github.io/sdmTMB/) with Gulf of St. Lawrence fisheries data.
+R functions to help use package sdmTMB with Gulf of St. Lawrence fisheries data.
 }
 \seealso{
 Useful links:
