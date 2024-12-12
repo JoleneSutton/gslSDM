@@ -1,4 +1,7 @@
 url: https://jolenesutton.github.io/gslSDM/
 template:
   bootstrap: 5
-
+reference:
+- title: Functions
+  contents:
+  - make_barrier_mesh
