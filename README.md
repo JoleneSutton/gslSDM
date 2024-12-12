@@ -8,5 +8,5 @@
 
 **gslSDM** provides tools to help use package
 [**sdmTMB**](https://pbs-assess.github.io/sdmTMB/) with Gulf of
-St. Lawrence fisheries data. **gslSDM** depends on package
+St. Lawrence fisheries data. **gslSDM** requires my other package,
 [**gslSpatial**](https://jolenesutton.github.io/gslSpatial/).
