@@ -4,6 +4,8 @@
 # gslSDM
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/JoleneSutton/gslSDM/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/JoleneSutton/gslSDM/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 **gslSDM** provides tools to help use package
