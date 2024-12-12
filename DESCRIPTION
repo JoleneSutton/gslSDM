@@ -22,7 +22,7 @@ Imports:
     sdmTMBextra (>= 0.0.4),
     sf (>= 1.0.0)
 Remotes: 
-    github::JoleneSutton/eclectic
+    github::JoleneSutton/eclectic,
     github::JoleneSutton/gslSpatial
 Suggests: 
     knitr,
