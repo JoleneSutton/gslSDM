@@ -13,7 +13,7 @@ make_barrier_mesh(x, mesh.cutoff)
 }
 \description{
 Makes a barrier mesh by applying \code{sdmTMB::make_mesh} and \code{sdmTMBextra::add_barrier_mesh}
-with the \code{coastline} shapefile from \code{sglSpatial}.
+with the \code{coastline} shapefile from \code{sglSpatial}. The function \code{add_barrier_mesh}is applied with the default range_fraction = 0.2.
 User supplies a data frame with latitude and longitude (epsg:4269).
 User supplies a cutoff value to indicate the minimum allowed triangle edge length (see sdmTMB documentation).
 The function projects to coordinate reference system: '+proj=utm +zone=20 +datum=NAD83 +units=km +no_defs'.
