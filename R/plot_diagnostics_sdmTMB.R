@@ -29,11 +29,11 @@ plot_diagnostics_sdmTMB<-function(model,structure){
   if(structure=='one'){
     
     pred$res<-stats::residuals(MOD) #randomized quantile residuals
-    p1<-ggplot(data=pred, aes(X, Y, col = res)) + 
+    p1<-ggplot(data=pred, aes({{X}}, {{Y}}, col = {{res}})) + 
       scale_colour_gradient2() +
       geom_point() +ggtitle('Residuals Spatial')
-    p2<-ggplot(data=pred,aes(res))+geom_histogram(binwidth = diff(range(pred$res))/30)+theme_bw()+ggtitle('Residuals Histogram')
-    p3<-ggplot(data=pred, aes(sample = res))+ stat_qq() + stat_qq_line()+ggtitle('Normal Q-Q')
+    p2<-ggplot(data=pred,aes({{res}}))+geom_histogram(binwidth = diff(range(pred$res))/30)+theme_bw()+ggtitle('Residuals Histogram')
+    p3<-ggplot(data=pred, aes(sample = {{res}}))+ stat_qq() + stat_qq_line()+ggtitle('Normal Q-Q')
     
 
     plots<-plot_grid(p2,p3,nrow=2)
@@ -49,21 +49,21 @@ plot_diagnostics_sdmTMB<-function(model,structure){
     suppressWarnings(pred$res.mod2<-stats::residuals(MOD,model=2))
     
     #binomial
-    p1a<-ggplot(data=pred, aes(X, Y, col = res.mod1)) + 
+    p1a<-ggplot(data=pred, aes_string('X', 'Y', col = 'res.mod1')) + 
       scale_colour_gradient2(name='res') +
       geom_point() +ggtitle('Residuals Spatial')
-    p2a<-ggplot(data=pred,aes(res.mod1))+geom_histogram(binwidth = diff(range(pred$res.mod1))/30)+theme_bw()+ggtitle('Residuals Histogram')
-    p3a<-ggplot(data=pred, aes(sample = res.mod1))+ stat_qq() + stat_qq_line()+ggtitle('Normal Q-Q')
+    p2a<-ggplot(data=pred,aes_string('res.mod1'))+geom_histogram(binwidth = diff(range(pred$res.mod1))/30)+theme_bw()+ggtitle('Residuals Histogram')
+    p3a<-ggplot(data=pred, aes_string(sample = 'res.mod1'))+ stat_qq() + stat_qq_line()+ggtitle('Normal Q-Q')
     
     plotsa<-cowplot::plot_grid(p2a,p3a,nrow=2)
     p5a<-cowplot::plot_grid(p1a,plotsa)
     
     # pos. catch
-    p1b<-ggplot(data=pred, aes(X, Y, col = res.mod2)) + 
+    p1b<-ggplot(data=pred, aes_string('X', 'Y', col = 'res.mod2')) + 
       scale_colour_gradient2(name='res') +
       geom_point() +ggtitle('Residuals Spatial')
-    p2b<-ggplot(data=pred,aes(res.mod2))+geom_histogram(binwidth = diff(range(pred$res.mod2,finite=1))/30)+theme_bw()+ggtitle('Residuals Histogram')
-    p3b<-ggplot(data=pred, aes(sample = res.mod2))+ stat_qq() + stat_qq_line()+ggtitle('Normal Q-Q')
+    p2b<-ggplot(data=pred,aes_string('res.mod2'))+geom_histogram(binwidth = diff(range(pred$res.mod2,finite=1))/30)+theme_bw()+ggtitle('Residuals Histogram')
+    p3b<-ggplot(data=pred, aes_string(sample = 'res.mod2'))+ stat_qq() + stat_qq_line()+ggtitle('Normal Q-Q')
     
     suppressWarnings(plotsb<-plot_grid(p2b,p3b,nrow=2))
     p5b<-plot_grid(p1b,plotsb)
